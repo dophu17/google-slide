@@ -54,7 +54,7 @@ function addSlide($service, $presentationId) {
 
 	echo '<br><br>End add slide';
 }
-
+//full width: 720
 function addShape($service, $presentationId, $slideId) {
 	// Create a new square textbox, using the supplied element ID.
 	$elementId = 'TextBox_1';
@@ -68,7 +68,7 @@ function addShape($service, $presentationId, $slideId) {
 	      'pageObjectId' => $slideId,
 	      'size' => array(
 	        'height' => $pt350,
-	        'width' => $pt350
+	        'width' => array('magnitude' => 720, 'unit' => 'PT')
 	      ),
 	      'transform' => array(
 	        'scaleX' => 1,
@@ -86,7 +86,10 @@ function addShape($service, $presentationId, $slideId) {
 	  'insertText' => array(
 	    'objectId' => $elementId,
 	    'insertionIndex' => 0,
-	    'text' => 'New Box Text Inserted!'
+	    'text' => 'New Box Text Inserted!',
+	    // 'style' => array(
+	    // 	'alignment' => 'CENTER'
+	    // )
 	  )
 	));
 
@@ -98,7 +101,7 @@ function addShape($service, $presentationId, $slideId) {
 	      'pageObjectId' => $slideId,
 	      'size' => array(
 	        'height' => $pt350,
-	        'width' => $pt350
+	        'width' => array('magnitude' => 500, 'unit' => 'PT')
 	      ),
 	      'transform' => array(
 	        'scaleX' => 1,
@@ -108,7 +111,7 @@ function addShape($service, $presentationId, $slideId) {
 	        'unit' => 'PT'
 	      )
 	    ),
-	    'url' => 'http://9mobi.vn/cf/images/2015/03/nkk/hinh-dep-1.jpg'
+	    'url' => 'http://export.highcharts.com/charts/chart.cc439b0fff6a4cf49b3c198b7ff783d2.jpeg'
 	  )
 	));
 

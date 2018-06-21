@@ -42,6 +42,8 @@ function getClient()
 
     // Refresh the token if it's expired.
     if ($client->isAccessTokenExpired()) {
+        unlink('credentials.json');
+        header('Location:' . $authUrl);
         $client->fetchAccessTokenWithRefreshToken($client->getRefreshToken());
         file_put_contents($credentialsPath, json_encode($client->getAccessToken()));
     }
@@ -63,6 +65,14 @@ function expandHomeDirectory($path)
 }
 
 // Get the API client and construct the service object.
+
+// $url_to_image = 'http://export.highcharts.com/charts/chart.fdf4018f08a34317b604b4976aed37e2.png';
+// $my_save_dir = '/';
+// $filename = basename($url_to_image);
+// $complete_save_loc = $my_save_dir . $filename;
+// file_put_contents($complete_save_loc, file_get_contents($url_to_image, null, null));
+
+
 $client = getClient();
 $service = new Google_Service_Slides($client);
 
