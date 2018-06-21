@@ -26,22 +26,22 @@
 
 			$('#get-image').click(function(e){
 				var optionsStr = JSON.stringify({
-					"title": {
-				        "text": 'Solar Employment Growth by Sector, 2010-2016'
+					title: {
+				        text: 'Solar Employment Growth by Sector, 2010-2016'
 				    },
-				    "subtitle": {
-				        "text": 'Source: thesolarfoundation.com'
+				    subtitle: {
+				        text: 'Source: thesolarfoundation.com'
 				    },
-				    "yAxis": {
-				        "title": {
-				            "text": 'Number of Employees'
+				    yAxis: {
+				        title: {
+				            text: 'Number of Employees'
 				        }
 				    },
-	                "xAxis": {
-		                "categories": categories
+	                xAxis: {
+		                categories: categories
 		            },
-	                "series": [{
-	                	"data": data
+	                series: [{
+	                	data: data
 		            }]
 		        }),
 		        dataString = encodeURI('async=true&type=image/jpeg&width=700&options=' + optionsStr);
